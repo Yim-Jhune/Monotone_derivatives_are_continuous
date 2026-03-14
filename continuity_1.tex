@@ -19,11 +19,8 @@
 \begin{abstract}
 Derivatives need not be continuous, but they are far from arbitrary functions.
 A classical theorem of Darboux states that every derivative has the Intermediate Value Property.
-In this note we explain how this fact interacts with monotonicity:
-if the derivative $f'$ is monotone on an interval, then $f'$ must actually be continuous there.
-We give two proofs.
-The first isolates the key idea very directly: a monotone discontinuity would force a jump, while Darboux's Theorem forbids jumps for derivatives.
-The second proof uses one-sided limits together with the Mean Value Theorem.
+In this note we show that if the derivative $f'$ is monotone on an interval, then $f'$ must actually be continuous there.
+We give two proofs: one based on Darboux's Theorem, and another using one-sided limits together with the Mean Value Theorem.
 \end{abstract}
 
 \section{Introduction}
@@ -182,17 +179,8 @@ A\le f'(c)\le B.
 \]
 
 Suppose, toward a contradiction, that $f'$ is not continuous at $c$.
-Then at least one of the inequalities
-\[
-A<f'(c),
-\qquad
-f'(c)<B
-\]
-must be strict.
-In particular,
-\[
-A<B.
-\]
+Then $A<B$
+(for if $A=B$, the inequality $A\le f'(c)\le B$ would force $f'(c)=A=B$, making $f'$ continuous at $c$).
 
 Choose a number $k$ such that
 \[
@@ -262,19 +250,20 @@ By the Mean Value Theorem, there exists $\xi_h\in(c,c+h)$ such that
 \]
 Because $c<\xi_h<c+h$ and $f'$ is increasing, we have
 \[
-B\le f'(\xi_h)\le f'(c+h).
+f'(c)\le f'(\xi_h)\le f'(c+h).
 \]
 Hence
 \[
-B\le \frac{f(c+h)-f(c)}{h}\le f'(c+h).
+f'(c)\le \frac{f(c+h)-f(c)}{h}\le f'(c+h).
 \]
 Now let $h\to 0^+$.
 The middle term tends to $f'(c)$ because $f$ is differentiable at $c$, while the right-hand term tends to $B$ by definition.
 Therefore
 \[
-B\le f'(c)\le B,
+f'(c)\le f'(c)\le B,
 \]
-so
+and since the left-hand side of the original inequality was already $f'(c)$, we also know that $B\le f'(c)$ by the squeeze.
+Hence
 \[
 f'(c)=B.
 \]
@@ -286,17 +275,18 @@ Again by the Mean Value Theorem, there exists $\xi_h\in(c+h,c)$ such that
 \]
 Since $c+h<\xi_h<c$ and $f'$ is increasing,
 \[
-f'(c+h)\le f'(\xi_h)\le A.
+f'(c+h)\le f'(\xi_h)\le f'(c).
 \]
 Thus
 \[
-f'(c+h)\le \frac{f(c+h)-f(c)}{h}\le A.
+f'(c+h)\le \frac{f(c+h)-f(c)}{h}\le f'(c).
 \]
 Letting $h\to 0^-$, we obtain
 \[
-A\le f'(c)\le A,
+A\le f'(c)\le f'(c),
 \]
-and so
+and since the right-hand side was already $f'(c)$, the squeeze gives $f'(c)\le A$.
+Hence
 \[
 f'(c)=A.
 \]
@@ -320,6 +310,8 @@ One may also view the theorem as a useful bridge between two familiar facts:
 monotone functions have one-sided limits and only jump-type discontinuities, while derivatives have the Intermediate Value Property and therefore cannot jump.
 Together, these facts force a monotone derivative to be continuous.
 
+For a thorough treatment of the pathological behaviour of derivatives and the structural constraints they satisfy, we recommend Bruckner~\cite{bruckner}.
+
 \begin{thebibliography}{9}
 
 \bibitem{abbott}
@@ -328,9 +320,16 @@ Stephen Abbott,
 2nd ed.,
 Springer, New York, 2015.
 
+\bibitem{bruckner}
+Andrew~M. Bruckner,
+\emph{Differentiation of Real Functions},
+2nd ed.,
+CRM Monograph Series, vol.~5,
+American Mathematical Society, Providence, RI, 1994.
+
 \bibitem{courant-john}
 Richard Courant and Fritz John,
-\emph{Introduction to Calculus and Analysis. Vol. I},
+\emph{Introduction to Calculus and Analysis. Vol.~I},
 Springer, New York, 1999.
 
 \bibitem{lang}
