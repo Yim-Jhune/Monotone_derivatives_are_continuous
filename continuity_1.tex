@@ -250,20 +250,19 @@ By the Mean Value Theorem, there exists $\xi_h\in(c,c+h)$ such that
 \]
 Because $c<\xi_h<c+h$ and $f'$ is increasing, we have
 \[
-f'(c)\le f'(\xi_h)\le f'(c+h).
+B\le f'(\xi_h)\le f'(c+h).
 \]
 Hence
 \[
-f'(c)\le \frac{f(c+h)-f(c)}{h}\le f'(c+h).
+B\le \frac{f(c+h)-f(c)}{h}\le f'(c+h).
 \]
 Now let $h\to 0^+$.
 The middle term tends to $f'(c)$ because $f$ is differentiable at $c$, while the right-hand term tends to $B$ by definition.
 Therefore
 \[
-f'(c)\le f'(c)\le B,
+B\le f'(c)\le B,
 \]
-and since the left-hand side of the original inequality was already $f'(c)$, we also know that $B\le f'(c)$ by the squeeze.
-Hence
+so
 \[
 f'(c)=B.
 \]
@@ -275,18 +274,17 @@ Again by the Mean Value Theorem, there exists $\xi_h\in(c+h,c)$ such that
 \]
 Since $c+h<\xi_h<c$ and $f'$ is increasing,
 \[
-f'(c+h)\le f'(\xi_h)\le f'(c).
+f'(c+h)\le f'(\xi_h)\le A.
 \]
 Thus
 \[
-f'(c+h)\le \frac{f(c+h)-f(c)}{h}\le f'(c).
+f'(c+h)\le \frac{f(c+h)-f(c)}{h}\le A.
 \]
 Letting $h\to 0^-$, we obtain
 \[
-A\le f'(c)\le f'(c),
+A\le f'(c)\le A,
 \]
-and since the right-hand side was already $f'(c)$, the squeeze gives $f'(c)\le A$.
-Hence
+and so
 \[
 f'(c)=A.
 \]
